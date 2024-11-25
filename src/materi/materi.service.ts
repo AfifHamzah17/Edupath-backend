@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateMateriDto } from './Dto/CreateMateriDto';
+import { CreateMateriDto } from '../materi/Dto/CreateMateriDto';
 import { buildResponse } from 'helper/buildResponse';
 import { getCurrentLocalTime } from 'helper/date-helper';
-import { UpdateMateriDto } from './Dto/UpdateMateriDto';
+import { UpdateMateriDto } from '../materi/Dto/UpdateMateriDto';
 
 @Injectable()
 export class MateriService {
