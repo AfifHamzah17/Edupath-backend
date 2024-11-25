@@ -1,0 +1,110 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  userId      String   @unique
+  password    String
+  name        String
+  phoneNumber String
+  role        Role
+  Admin       Admin?
+  Guru        Guru?
+  Murid       Murid?
+  createdAt   DateTime
+  updatedAt   DateTime
+
+  @@map("users")
+}
+
+model Admin {
+  id      Int     @id @default(autoincrement())
+  photo   String?
+  adminId Int     @unique
+  user    User    @relation(fields: [adminId], references: [id])
+
+  @@map("admins")
+}
+
+model Guru {
+  id     Int      @id @default(autoincrement())
+  guruId Int      @unique
+  photo  String?
+  user   User     @relation(fields: [guruId], references: [id], onDelete: Cascade)
+  materi Materi[]
+  soal   Soal[]
+
+  @@map("gurus")
+}
+
+model Murid {
+  id          Int       @id @default(autoincrement())
+  muridId     Int       @unique
+  photo       String?
+  user        User      @relation(fields: [muridId], references: [id], onDelete: Cascade)
+  gayaBelajar String?
+  jawaban     Jawaban[]
+
+  @@map("murids")
+}
+
+model Materi {
+  id       Int    @id @default(autoincrement())
+  title    String
+  content  String @db.Text
+  videoUrl String
+  guruId   Int
+  guru     Guru   @relation(fields: [guruId], references: [id], onDelete: Cascade)
+  soals    Soal[]
+
+  createdAt DateTime
+  updatedAt DateTime
+
+  @@map("materis")
+}
+
+model Soal {
+  id       Int       @id @default(autoincrement())
+  question String
+  answer   String
+  guruId   Int
+  materiId Int
+  guru     Guru      @relation(fields: [guruId], references: [id], onDelete: Cascade)
+  materi   Materi    @relation(fields: [materiId], references: [id], onDelete: Cascade)
+  options  Option[]
+  jawaban  Jawaban[]
+
+  @@map("soals")
+}
+
+model Option {
+  id     Int    @id @default(autoincrement())
+  text   String
+  soalId Int
+  soal   Soal   @relation(fields: [soalId], references: [id], onDelete: Cascade)
+
+  @@map("options")
+}
+
+model Jawaban {
+  id      Int    @id @default(autoincrement())
+  soalId  Int
+  muridId Int
+  jawaban String
+  soal    Soal   @relation(fields: [soalId], references: [id], onDelete: Cascade)
+  murid   Murid  @relation(fields: [muridId], references: [id], onDelete: Cascade)
+
+  @@map("jawabans")
+}
+
+enum Role {
+  ADMIN
+  GURU
+  MURID
+}

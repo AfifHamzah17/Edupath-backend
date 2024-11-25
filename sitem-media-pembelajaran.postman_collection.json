@@ -1,0 +1,813 @@
+{
+	"info": {
+		"_postman_id": "ab0e66e2-3cf1-48b2-bac6-12865e6053e1",
+		"name": "sitem-media-pembelajaran",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25261463",
+		"_collection_link": "https://crimson-rocket-721231.postman.co/workspace/My-Workspace~fa4b6365-20f2-411c-8f0b-4c471c6e283c/collection/25261463-ab0e66e2-3cf1-48b2-bac6-12865e6053e1?action=share&source=collection_link&creator=25261463"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"userId\":\"132132232\",\r\n//     \"name\":\"Supriadi\",\r\n//     \"password\":\"test123\",\r\n//     \"phoneNumber\":\"245245\",\r\n//     \"role\":\"ADMIN\"\r\n// }\r\n\r\n\r\n// {\r\n//     \"userId\":\"56546\",\r\n//     \"name\":\"Supriadi\",\r\n//     \"password\":\"test123\",\r\n//     \"phoneNumber\":\"245245\",\r\n//     \"role\":\"GURU\"\r\n// }\r\n{\r\n    \"userId\":\"jennie.blackpink@gmail.com\",\r\n    \"name\":\"Supriadi\",\r\n    \"password\":\"password\",\r\n    \"phoneNumber\":\"245245\",\r\n    \"role\":\"GURU\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"56546\",\r\n    \"password\":\"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get all User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/delete",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "materi",
+			"item": [
+				{
+					"name": "Create Materi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Materi Pelajaran 5\",\r\n  \"videoUrl\": \"https://www.youtube.com/watch?v=bKbNaS6MTfo&list=OLAK5uy_mN99CFd16Xb-BqPuBKjLkNvrCUsE8q-bs&index=8\",\r\n  \"content\": \"Modul Kesiapsiagaan Bela Negarayang disusun oleh Lembaga Administrasi Negara bertujuan untuk membekali calon pegawai negeri sipil (CPNS) dengan pemahaman dan kemampuan dasar dalam bela negara. Modul ini dirancang untuk memperkuat integritas moral, semangat nasionalisme, dan karakter kepribadian yang unggul sebagai bagian dari tugas dan tanggung jawab seorang aparatur sipil negara (ASN). Kesiapsiagaan bela negara meliputi kesiapan fisik, mental, serta pemahaman etika, etiket, dan kearifan lokal yang diperlukan untuk menghadapi berbagai situasi kerja dan tantangan yang mungkin dihadapi di masa depan. Modul ini juga menekankan pentingnya kesehatan jasmani dan mental sebagai fondasi utama dalam kesiapsiagaan bela negara. Selain itu, CPNS diajak untuk menyusun rencana aksi bela negara yang mencakup berbagai kegiatan praktis seperti baris-berbaris, tata upacara, keprotokolan, serta latihan fisik dan mental yang dirancang untuk membangun disiplin, kepemimpinan, dan kerjasama tim. Pelatihan ini juga mencakup penguatan pemahaman tentang wawasan kebangsaan dan analisis isu strategis, yang akan sangat berguna dalam pelaksanaan tugas sebagai ASN yang profesional dan siap siaga. Secara keseluruhan, modul ini bertujuan untuk mencetak CPNS yang tidak hanya siap dalam menjalankan tugas-tugas pemerintahan, tetapi juga memiliki kesadaran bela negara yang kuat, mampu menjaga integritas bangsa, dan berperan aktif dalam mempertahankan kedaulatan negara dalam berbagai situa     \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/materi/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"materi",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all materi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/materi/get-all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"materi",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Materi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5,\r\n    \"title\": \"Materi Pelajaran 2\",\r\n    \"videoUrl\": \"https://www.youtube.com/watch?v=GlTFf89rAgA&list=OLAK5uy_mN99CFd16Xb-BqPuBKjLkNvrCUsE8q-bs&index=6\",\r\n    \"content\": \"Ini adaldsfsfsah penjelasan dari materi pelajaran KEDUA.\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/materi/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"materi",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Materi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/materi/delete",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"materi",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Materi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/materi/get-id-materi",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"materi",
+								"get-id-materi"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "guru",
+			"item": [
+				{
+					"name": "Create Guru",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "user123",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1ef26582-54a0-4440-ace8-ce146c87df50"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/guru/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"guru",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Guru",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "guruId",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1ef29b72-20bd-4710-8c07-cdbf972b46f4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/guru/dsfsdfds",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"guru",
+								"dsfsdfds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Guru Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/guru/get-all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"guru",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get id Guru Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"guruId\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/guru/get-by-id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"guru",
+								"get-by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Guru",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"guruId\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/guru/delete",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"guru",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Soal",
+			"item": [
+				{
+					"name": "Create Soal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"question\": \"Apa dsfsdfibuasa?\",\r\n  \"answer\": \"c\",\r\n  \"options\": [\r\n    { \"text\": \"a. Jakarta\" },\r\n    { \"text\": \"b. Bandung\" },\r\n    { \"text\": \"c. Surabaya\" },\r\n    { \"text\": \"d. Medan\" }\r\n  ],\r\n  \"materiId\": 5\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Jawaban",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"soalId\": 1,\r\n  \"jawaban\": \"a\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/jawab",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"jawab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get soal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"materiId\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/materi",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"materi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Many Jawaban",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"materiId\": 5,\r\n  \"jawabanList\": [\r\n    {\r\n      \"soalId\": 2,\r\n      \"jawaban\": \"a\"\r\n    },\r\n    {\r\n      \"soalId\": 6,\r\n      \"jawaban\": \"b\"\r\n    }\r\n   \r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/submit-many",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"submit-many"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete soal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"soalId\": 6\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/delete",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Soal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"data\": {\r\n    \"question\": \"Apa ibu ?\",\r\n    \"answer\": \"a\",\r\n    \"options\": [\r\n      { \"text\": \"a. Jakarta\" },\r\n      { \"text\": \"b. Bandung\" },\r\n      { \"text\": \"c. Surabaya\" },\r\n      { \"text\": \"d. Medan\" }\r\n    ],\r\n    \"materiId\": 5\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/soal/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"soal",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Murid",
+			"item": [
+				{
+					"name": "Create Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1ef29b72-20bd-4710-8c07-cdbf972b46f4"
+								},
+								{
+									"key": "gayaBelajar",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/murid/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/murid/getAll",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/murid/getById",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"getById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "muridId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "postman-cloud:///1ef20eea-05b5-44a0-ab35-ebd52de509ec"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/murid/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/murid/delete",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gaya Belajar Murid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"muridId\": 2,\r\n    \"jawaban\": [\r\n      \"Visual\",\r\n      \"Auditori\",\r\n      \"Visual\",\r\n      \"Visual\",\r\n      \"Auditori\",\r\n      \"Kinestetik\",\r\n      \"Visual\",\r\n      \"Auditori\",\r\n      \"Kinestetik\",\r\n      \"Visual\"\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/murid/submit-tes-gaya-belajar",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"murid",
+								"submit-tes-gaya-belajar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJ1c2VySWQiOiIyMTIzMiIsIm5hbWUiOiJTdXByaWFkaSIsInBob25lTnVtYmVyIjoiMjQ1MjQ1IiwiaWF0IjoxNzIzNjU2ODA0LCJleHAiOjE3MjYyNDg4MDR9.DrQL0jBMdkldihHC_FT_9s9NqcLuDqJe7-wuX5BeGfM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
