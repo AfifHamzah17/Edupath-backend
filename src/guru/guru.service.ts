@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { UpdateGuruDto } from './dto/UpdateGuruDto';
+import { UpdateGuruDto } from './Dto/UpdateGuruDto';
 import { buildResponse } from 'helper/buildResponse';
 import { join } from 'path';
 import { existsSync, mkdirSync } from 'fs';
